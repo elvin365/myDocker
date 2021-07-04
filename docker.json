@@ -1,0 +1,161 @@
+{
+	"defaultAction": "SCMP_ACT_ERRNO",
+	"archMap": [
+		{
+			"architecture": "SCMP_ARCH_X86_64",
+			"subArchitectures": [
+				"SCMP_ARCH_X86",
+				"SCMP_ARCH_X32"
+			]
+		},
+		{
+			"architecture": "SCMP_ARCH_AARCH64",
+			"subArchitectures": [
+				"SCMP_ARCH_ARM"
+			]
+		},
+		{
+			"architecture": "SCMP_ARCH_MIPS64",
+			"subArchitectures": [
+				"SCMP_ARCH_MIPS",
+				"SCMP_ARCH_MIPS64N32"
+			]
+		},
+		{
+			"architecture": "SCMP_ARCH_MIPS64N32",
+			"subArchitectures": [
+				"SCMP_ARCH_MIPS",
+				"SCMP_ARCH_MIPS64"
+			]
+		},
+		{
+			"architecture": "SCMP_ARCH_MIPSEL64",
+			"subArchitectures": [
+				"SCMP_ARCH_MIPSEL",
+				"SCMP_ARCH_MIPSEL64N32"
+			]
+		},
+		{
+			"architecture": "SCMP_ARCH_MIPSEL64N32",
+			"subArchitectures": [
+				"SCMP_ARCH_MIPSEL",
+				"SCMP_ARCH_MIPSEL64"
+			]
+		},
+		{
+			"architecture": "SCMP_ARCH_S390X",
+			"subArchitectures": [
+				"SCMP_ARCH_S390"
+			]
+		}
+	],
+	"syscalls": [
+		{
+			"names": [
+				"accept",				
+				"bind",				
+				"brk",				
+				"capget",
+				"capset",				
+				"chdir",				
+				"close",				
+				"connect",
+				"dup",
+				"dup2",				
+				"epoll_pwait",				
+				"execve",				
+				"exit_group",				
+				"fchmod",				
+				"fcntl",				
+				"fork",				
+				"fstat",
+				"fstatfs",
+				"futex",
+				"getcwd",				
+				"getdents64",				
+				"getegid",				
+				"geteuid",				
+				"getgid",
+				"getpeername",				
+				"getpgid",				
+				"getpid",				
+				"getppid",				
+				"getrandom",				
+				"getsockname",	
+				"gettid",			
+				"getuid",				
+				"ioctl",				
+				"listen",				
+				"lseek",				
+				"mmap",				
+				"mprotect",				
+				"newfstatat",				
+				"open",				
+				"openat",				
+				"pipe",
+				"poll",				
+				"prctl",
+				"prlimit64",				
+				"read",
+				"readlink",				
+				"rename",				
+				"rt_sigaction",				
+				"rt_sigprocmask",				
+				"rt_sigreturn",				
+				"select",				
+				"sendto",
+				"setgid",				
+				"setgroups",
+				"setresgid",
+				"setresuid",
+				"setsid",				
+				"setsockopt",				
+				"set_tid_address",				
+				"setuid",				
+				"socket",				
+				"socketpair",				
+				"stat",				
+				"umask",				
+				"uname",				
+				"wait4",				
+				"write",				
+				"writev"
+			],
+			"action": "SCMP_ACT_ALLOW",
+			"args": [],
+			"comment": "",
+			"includes": {},
+			"excludes": {}
+		},		
+		{
+			"names": [
+				"arch_prctl"
+			],
+			"action": "SCMP_ACT_ALLOW",
+			"args": [],
+			"comment": "",
+			"includes": {
+				"arches": [
+					"amd64",
+					"x32"
+				]
+			},
+			"excludes": {}
+		},
+		{
+			"names": [
+				"chroot"
+			],
+			"action": "SCMP_ACT_ALLOW",
+			"args": [],
+			"comment": "",
+			"includes": {
+				"caps": [
+					"CAP_SYS_CHROOT"
+				]
+			},
+			"excludes": {}
+		}
+	]
+}
+
